@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-Hebel Labs - Prototyp & Manifest ROSARY ®© Mani²</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1, h2 { color: #333; }
+        input, button { margin: 5px; }
+        canvas { border: 1px solid #000; display: block; margin: 10px 0; }
+        table { border-collapse: collapse; width: 100%; max-width: 800px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        a { color: blue; text-decoration: none; }
+        .accordion { background-color: #eee; cursor: pointer; padding: 10px; margin: 5px 0; }
+        .panel { display: none; background-color: #f9f9f9; padding: 10px; }
+        .surprise { background-color: #ffeb3b; padding: 10px; border: 1px solid #ffc107; }
+    </style>
+</head>
+<body>
+    <h1>Q-Hebel Labs - Think Tank auf uni Campus</h1>
+    <p>Willkommen im erweiterten Prototyp! Simuliere, analysiere Märkte und integriere Weisheit aus dem Manifest. Kaufe Produkte im <a href="https://Rosary.health/shop" target="_blank">Rosary Health Shop</a> – z.B. Hügelbeet-Lizenz als Basis für unsere Spiralen!</p>
+
+    <h2>Schritt 1: Dynamo-Simulation (Q-Hebel-Optimierung)</h2>
+    <p>Eingaben: ω (rad/s), B (T). Berechnet η mit 20% Optimierung.</p>
+    <input type="number" id="omega" value="223" placeholder="ω (rad/s)">
+    <input type="number" id="B" value="1.2" placeholder="B (T)">
+    <button onclick="simulate()">Simulieren</button>
+    <p id="result">Effizienz: -</p>
+    <canvas id="spiral" width="400" height="400"></canvas>
+
+    <h2>Schritt 2: Vertiefte Marktanalyse (2026-Daten)</h2>
+    <table>
+        <!-- Tabelle wie zuvor, erweitert um AI-Supply Chain -->
+        <tr><th>Anwendung</th><th>Komplexes System</th><th>Durchbruch</th><th>Marktwert 2026 (USD)</th></tr>
+        <!-- ... (vorherige Zeilen) -->
+        <tr><td>Shop-Integration</td><td>Spirituelle Produkte</td><td>eBook-Manifest als Download</td><td>Potenzial €10-50K (Custom)</td></tr>
+    </table>
+
+    <h2>Schritt 3: Download Print Files & Überraschung: 3D-Q-Hebel-Spiral</h2>
+    <div class="surprise">
+        <p>Überraschung! Hier OpenSCAD-Code für ein 3D-Modell der Goldenen Spirale (Q-Hebel). Druck es in Albstadt und verkaufe als Amulett im Shop – verbindet Mathematik mit Spiritualität!</p>
+        <a href="data:text/plain;charset=utf-8;base64,JGZuID0gMTAwOyAvLyBSZXNvbHV0aW9uCgptb2R1bGUgZ29sZGVuX3NwaXJhbCgpIHsKICByID0gMTsKICB0aGV0YSA9IDA7CiAgZm9yIChpID0gWzA6MC4xOjIwXSkgeyAvLyBTdGVwcyBmb3Igc3BpcmFsCiAgICB0cmFuc2xhdGUoW3IgKiBjb3ModGhldGEpLCByICogc2luKHRoZXRhKSwgMF0pCiAgICAgIGN5bGluZGVyKGg9MSwg cj0wLjUpOyAvLyBTaW1wbGUgY3lsaW5kZXJzIGZvciB2aXN1YWxpemF0aW9uCiAgICByID0gciAqIHBvdyhwaGksIDAuMSAvICgyKlBJKSk7IC8vIEFwcHJveGltYXRlIGdyb3d0aAogICAgdGhldGEgPSB0aGV0YSArIDAuMTsKICB9Cn0KCmdvbGRlbl9zcGlyYWwoKTs=" download="q-hebel-spiral.scad">Download SCAD-File</a>
+    </div>
+    <ul>
+        <li><a href="https://www.thingiverse.com/thing:765207/files" download>Dynamo STL</a></li>
+        <!-- Weitere -->
+    </ul>
+
+    <h2>Schritt 4: Interaktives Manifest eBook (Mani²)</h2>
+    <p>Klicke für Weisheiten – direkt aus deiner DOCX integriert. Kaufe als volles eBook im Shop!</p>
+    <div class="accordion" onclick="togglePanel(this)">Einleitung: Riemann-Hypothese als Offenbarung</div>
+    <div class="panel">Die Riemann-Hypothese steht seit 1859 wie ein keltisches Steinkreuz... (voller Text hier einfügen).</div>
+    <!-- Mehr Accordion-Sections für Kapitel -->
+
+    <h2>Schritt 5: AI-Value-Stream-Prognose (Überraschung #2)</h2>
+    <p>Simuliere Prognosen für Supply-Chains (z.B. Alibaba). Eingabe: Wachstumsrate.</p>
+    <input type="number" id="growth" value="35" placeholder="CAGR (%)">
+    <button onclick="prognose()">Prognostizieren</button>
+    <p id="prog-result">Marktwert 2030: -</p>
+
+    <script>
+        function togglePanel(elem) {
+            let panel = elem.nextElementSibling;
+            panel.style.display = panel.style.display === "block" ? "none" : "block";
+        }
+
+        function simulate() { /* Vorheriger Code */ }
+
+        function prognose() {
+            let growth = parseFloat(document.getElementById('growth').value) || 35;
+            let base = 638000000; // Quantum AI 2026
+            let years = 4; // Bis 2030
+            let value = base * Math.pow(1 + growth/100, years);
+            document.getElementById('prog-result').innerText = `Marktwert 2030: $${value.toFixed(0)} (Q-AI-Optimiert)`;
+        }
+    </script>
+</body>
+</html>
