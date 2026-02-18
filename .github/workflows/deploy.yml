@@ -1,4 +1,4 @@
-name: Deploy Q-Hebel Labs (stable & always)
+name: Deploy Q-Hebel Labs (stable)
 
 on:
   push:
@@ -7,6 +7,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     steps:
       - uses: actions/checkout@v4
       
@@ -17,7 +21,7 @@ jobs:
           publish_dir: ./
           allow_empty_commit: true
 
-      - name: Upload artifact (ALWAYS – auch bei Fehlern)
+      - name: Upload artifact (always)
         if: always()
         uses: actions/upload-artifact@v4
         with:
