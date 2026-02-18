@@ -1,4 +1,4 @@
-name: Deploy Q-Hebel Labs
+name: Deploy Q-Hebel Labs (stable & always)
 
 on:
   push:
@@ -10,8 +10,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Upload artifact (always, auch bei Fehlern)
-        if: always()                  # ← wichtigster Fix!
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          allow_empty_commit: true
+
+      - name: Upload artifact (ALWAYS – auch bei Fehlern)
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: q-hebel-build
