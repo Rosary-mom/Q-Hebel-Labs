@@ -1,0 +1,19 @@
+name: Deploy Q-Hebel Labs
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Upload artifact (always, auch bei Fehlern)
+        if: always()                  # ← wichtigster Fix!
+        uses: actions/upload-artifact@v4
+        with:
+          name: q-hebel-build
+          path: ./
+          retention-days: 7
